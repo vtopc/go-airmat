@@ -12,8 +12,8 @@ func NewMattress[T any](size int) *Mattress[T] {
 	}
 }
 
-// Grow extends or shrinks length of underlying Slice.
-func (m *Mattress[T]) Grow(size int) {
+// SetSize extends or shrinks length of underlying Slice.
+func (m *Mattress[T]) SetSize(size int) {
 	if m.Slice == nil {
 		m.Slice = make([]T, size)
 

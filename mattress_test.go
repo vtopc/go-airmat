@@ -87,7 +87,7 @@ func TestMattress_Grow(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			tt.m.Grow(tt.len)
+			tt.m.SetSize(tt.len)
 			assert.Equal(t, tt.len, len(tt.m.Slice))
 			assert.Equal(t, tt.cap, cap(tt.m.Slice))
 		})
