@@ -10,6 +10,7 @@ func NewMattress[T any](size int) *Mattress[T] {
 	}
 }
 
+// Grow extends or shrinks length of underlying Slice.
 func (m *Mattress[T]) Grow(size int) {
 	if m.Slice == nil {
 		m.Slice = make([]T, size)
@@ -23,14 +24,13 @@ func (m *Mattress[T]) Grow(size int) {
 	case l == size:
 		break
 	case l < size:
-		m.pump(size)
+		m.extend(size)
 	case l > size:
 		m.shrink(size)
 	}
 }
 
-// pump extends size
-func (m *Mattress[T]) pump(l int) {
+func (m *Mattress[T]) extend(l int) {
 	diff := l - len(m.Slice)
 
 	// if diff < 0 {
