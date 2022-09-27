@@ -83,8 +83,6 @@ func TestMattress_Grow(t *testing.T) {
 			len:  size / 2,
 			cap:  size,
 		},
-
-		// TODO: Add test cases.
 	}
 
 	for _, tt := range tests {
