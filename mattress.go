@@ -1,5 +1,7 @@
 package airmat
 
+// Mattress is a container for a Slice.
+// Slice should be updated by the index, not with append(...) func.
 type Mattress[T any] struct {
 	Slice []T
 }
