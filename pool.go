@@ -24,6 +24,7 @@ func NewPool[T any]() *Pool[T] {
 }
 
 // Get selects an arbitrary Mattress from the Pool, removes it from the Pool, and returns it to the caller.
+// It might return a Slice with some data, but since it should be written by index it's not an issue.
 func (p *Pool[T]) Get() *Mattress[T] {
 	return p.sp.Get().(*Mattress[T])
 }
