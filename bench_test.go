@@ -12,6 +12,7 @@ var parallelRequests = []int{8, 16, 24}
 // Global variable for Benchmarking - https://itnext.io/the-top-10-most-common-mistakes-ive-seen-in-go-projects-4b79d4f6cd65
 var (
 	s    []int
+	mm   []*airmat.Mattress[int]
 	pool = airmat.NewPool[int]()
 )
 
@@ -31,7 +32,7 @@ func BenchmarkMakeSlices(b *testing.B) {
 func BenchmarkPool(b *testing.B) {
 	for _, requests := range parallelRequests {
 		b.Run(strconv.Itoa(requests), func(b *testing.B) {
-			mm := make([]*airmat.Mattress[int], requests)
+			mm = make([]*airmat.Mattress[int], requests)
 
 			for n := 0; n < b.N; n++ {
 				// emulates parallel requests
