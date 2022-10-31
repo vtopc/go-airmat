@@ -23,6 +23,14 @@ func NewPool[T any]() *Pool[T] {
 	}
 }
 
+// NewPoolCustom builds an airmat.Pool that utilizes the user provided
+// sync.Pool.  The sync.Pool must generate *Mattress[T] values.
+func NewPoolCustom[T any](pool *sync.Pool) *Pool[T] {
+	return &Pool[T]{
+		sp: pool,
+	}
+}
+
 // Get selects an arbitrary Mattress from the Pool, removes it from the Pool, and returns it to the caller.
 // It might return a Slice with some data, but since it should be written by index it's not an issue.
 func (p *Pool[T]) Get() *Mattress[T] {
