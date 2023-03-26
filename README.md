@@ -19,3 +19,8 @@ BenchmarkPool/8-4                	 4156912	       288.8 ns/op	       0 B/op	    
 BenchmarkPool/16-4               	   56299	     19531 ns/op	       9 B/op	       0 allocs/op
 BenchmarkPool/24-4               	     133	   8669618 ns/op	      13 B/op	       0 allocs/op
 ```
+
+## TODO
+1. Shrink huge Mattresses, e.g.:
+  - https://github.com/golang/go/issues/27735#issuecomment-739169121
+  - https://github.com/valyala/bytebufferpool
