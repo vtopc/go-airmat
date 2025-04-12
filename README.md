@@ -21,6 +21,6 @@ BenchmarkPool/24-4               	     133	   8669618 ns/op	      13 B/op	      
 ```
 
 ## TODO
-1. Shrink huge Mattresses, e.g.:
+1. Shrink huge Mattresses(https://wundergraph.com/blog/golang-sync-pool), e.g.:
   - https://github.com/golang/go/issues/27735#issuecomment-739169121
   - https://github.com/valyala/bytebufferpool
